@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+.button1 {
+    background-color: white;
+    color: black;
+    padding: 10px 40px;
+    margin: 4px 2px;
+    font-size: 8px;
+}
+.button1:hover {
+    background-color: #BBBBBB;
+    color: white;
+}
+
+.button2 {
+    background-color: white;
+    color: black;
+    padding: 16px 232px;
+    margin: 4px 2px;
+    font-size: 16px;
+}
+.input{
+    padding: 10px 40px;
+    margin: 4px 2px;
+    font-size: 8px;
+}
+
+</style>
+<!--
+<div class="mfn-main-slider" id="mfn-layer-slider">
+    <img src="http://alpi.org.ar/es/wp-content/uploads/2017/10/banner-2-web-2017.jpg" style="width: 1360px; height: 309.091px; margin-left: 0px; margin-top: -34.5455px;"/>
+</div>
+-->
+
+<head>
+  <title>Mantenimiento Reparaciones</title>
+</head>
+<body onLoad="myOnLoad({{ejemplo}})">
+<!--
+  <h1>Visitas</h1>
+-->
+
+    <select name="sectores" id="sectores">
+        <option>Seleccione un Sector...</option>
+    </select>
+
+<div id="campos">
+    <p>Nombre del Solicitante: <input id="1"> Telefono: <input id="2"></p>
+    <p>Resolucion: <select class="button1" id="resolucion">
+        <option value="1" selected>Lo antes Posible</option>
+        <option value="2">Urgente Anticipar telefonicamete a 128, 151</option>
+    </select>
+    </p>
+    <p>Motivo de solicitud</p>
+    <textarea rows="4" cols="50" id="motivo"></textarea>
+    <button class="button2" id="guardar">Guardar</button>
+</div>
+</body>
+
+
+<!--
+<div id="recorder">
+</div>
+-->
+
+<!--
+<video controls width="400" height="200">
+        <source src="/static/dCJfqtQLPj8.mp4" type="video/mp4">
+    </video>
+
+</body>
+
+-->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>-->
+<script type="text/javascript" src="{{ url_for('static', filename='recorder.js') }}"></script>
+
+</html>

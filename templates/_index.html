@@ -1,0 +1,55 @@
+<html lang="es">
+<!-- meta ignored -->
+
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <!-- <script type="text/javascript"> /* <![CDATA[ */ /* ]]> */ </script> -->
+        <script type="text/javascript" src="{{ url_for('static', filename='recorder.js') }}"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+
+<body onLoad="myOnLoad({{ejemplo}})">
+
+      <div class="page-header" class="center-block" id="container">
+        <img src="/static/logo200e.jpg" class="img-responsive" class="center-block" alt="Responsive image">
+      </div>
+
+      <h1>Solicitud de Reparación</h1>
+
+      <div class="dropdown">
+        <select name="sectores" class="btn btn-primary dropdown-toggle" type="button"  id="sectores" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+         <option>Seleccione el Sector</option>
+            <span class="caret"></span>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1"></ul>
+       </select>
+      </div><br>
+
+    <div id="campos">
+
+        <label>Nombre del Solicitante: <input id="1" class="btn btn-default" /></label> <br>
+        <label>Email: <select id="email" class="btn btn-primary dropdown-toggle">
+                <option>enfermeria@alpi.org.ar</option>
+            </select>
+        </label> <br><br>
+
+        <label>Telefono: <input id="2" class="btn btn-default"/></label> <br><br>
+
+        <label>Resolución: <select class="btn btn-primary dropdown-toggle" id="resolucion">
+            <option  value="1">Lo antes Posible</option>
+            <option  value="2">Urgente Anticipar telefonicamete a 128, 151</option>
+                        </select>
+        </label> <br> <br>
+        <p>Motivo de solicitud:</p>
+        <textarea id="motivo" class="btn btn-default" rows="4" cols="50"> </textarea> <br> <br>
+        <button onclick="guardar()" class="btn btn-primary" id="guardar">Guardar</button>
+    </div>
+
+
+</body>
+
+
+
+
+<!-- script not allowed -->
+
+</html>
