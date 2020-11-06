@@ -1,53 +1,96 @@
 <html lang="es">
 <!-- meta ignored -->
-
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<head>
         <!-- <script type="text/javascript"> /* <![CDATA[ */ /* ]]> */ </script> -->
-        <script type="text/javascript" src="{{ url_for('static', filename='recorder.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/recorder.js') }}"></script>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    </head>
+        <div class="page-header">
+            <h1 class="center-block"><img src="/static/logo200e.jpg" alt="Responsive image" width="50" height="50">Solicitud de Reparación</h1>
+        </div>
+
+</head>
 
 <body onLoad="myOnLoad({{ejemplo}})">
-
-      <div class="page-header" class="center-block" id="container">
-        <img src="/static/logo200e.jpg" class="img-responsive" class="center-block" alt="Responsive image">
-      </div>
-
-      <h1>Solicitud de Reparación</h1>
-
-      <div class="dropdown">
-        <select name="sectores" class="btn btn-primary dropdown-toggle" type="button"  id="sectores" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-         <option>Seleccione el Sector</option>
-            <span class="caret"></span>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1"></ul>
-       </select>
-      </div><br>
-
-    <div id="campos">
-
-        <label>Nombre del Solicitante: <input id="1" class="btn btn-default" /></label> <br>
-        <label>Email: <select id="email" class="btn btn-primary dropdown-toggle">
-                <option></option>
-                <option>enfermeria@alpi.org.ar</option>
-            </select>
-        </label> <br><br>
-
-        <label>Telefono: <input id="2" class="btn btn-default"/></label> <br><br>
-
-        <label>Resolución: <select class="btn btn-primary dropdown-toggle" id="resolucion">
-            <option  value="1">Lo antes Posible</option>
-            <option  value="2">Urgente Anticipar telefonicamete a 128, 151</option>
-                        </select>
-        </label> <br> <br>
-        <p>Motivo de solicitud:</p>
-        <textarea id="motivo" class="btn btn-default" rows="4" cols="50"> </textarea> <br> <br>
-        <button onclick="guardar()" class="btn btn-primary" id="guardar">Guardar</button>
+<form class="form-horizontal">
+    <div class="form-group">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Sector: </label>
+            <div class="col-sm-10">
+                <select name="sectores" class="btn btn-primary dropdown-toggle" id="sectores">
+                    <option>Seleccione el Sector</option>
+                    <span class="caret"></span>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1"></ul>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Nombre del Solicitante: </label>
+            <div class="col-sm-10">
+                <input placeholder="Ej: Sebastian Perez" id="1" class="btn btn-default" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Email: </label>
+            <div class="col-sm-10">
+                <select id="email" class="btn btn-primary dropdown-toggle">
+                    <option></option>
+                    <option>contaduria@alpi.org.ar</option>
+                    <option>cirugia@alpi.org.ar</option>
+                    <option>compras@alpi.org.ar</option>
+                    <option>docenciamedica@alpi.org.ar</option>
+                    <option>dpto.farmacia@alpi.org.ar</option>
+                    <option>dcolina@alpi.org.ar</option>
+                    <option>direccionmedica@alpi.org.ar</option>
+                    <option>ediaz@alpi.org.ar</option>
+                    <option>enfermeria@alpi.org.ar</option>
+                    <option>facturacion@alpi.org.ar</option>
+                    <option>gjordan@alpi.org.ar</option>
+                    <option>hospitaldedia@alpi.org.ar</option>
+                    <option>internacion@alpi.org.ar</option>
+                    <option>limpieza@alpi.org.ar</option>
+                    <option>sistemas@alpi.org.ar</option>
+                    <option>recepcion@alpi.org.ar</option>
+                    <option>rayos@alpi.org.ar</option>
+                    <option>recursoshumanos@alpi.org.ar</option>
+                    <option>secretariapresidencia@alpi.org.ar</option>
+                    <option>secretariapresidencia@alpi.org.ar</option>
+                    <option>tesoreria@alpi.org.ar</option>
+                    <option>terapiaintensiva@alpi.org.ar</option>
+                    <option>terapiaocupacional@alpi.org.ar</option>
+                    <option>terapiafisica@alpi.org</option>
+                    <option>vigilancia@alpi.org.ar</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Telefono: </label>
+            <div class="col-sm-10">
+                <input placeholder="Ej: 400" id="2" class="btn btn-default"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Resolución: </label>
+            <div class="col-sm-10">
+                <select class="btn btn-primary dropdown-toggle" id="resolucion">
+                    <option  value="1">Lo antes Posible</option>
+                    <option  value="2">Urgente Anticipar telefonicamete a 128, 151</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Motivo de solicitud:</label>
+            <div class="col-sm-10">
+                <textarea id="motivo" class="btn btn-default" rows="4" cols="50"></textarea>
+            </div>
+        </div>
     </div>
+</form>
+
+<button onclick="guardar()" class="col-sm-10 btn btn-primary" id="guardar">Guardar</button>
 
 
 </body>
-
 
 
 
